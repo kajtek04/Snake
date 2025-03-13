@@ -4,7 +4,7 @@ Snake::Snake(){
     body.push_back({SNAKE_START_X, SNAKE_START_Y, UP});
     headDir = UP;
 
-    for(int i = 0 ; i<SNAKE_SIZE ; i++){
+    for(int i = 1 ; i<SNAKE_SIZE ; i++){
         snakeSegment segment;
         segment.x = SNAKE_START_X;
         segment.y = SNAKE_START_Y + i;

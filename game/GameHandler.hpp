@@ -5,6 +5,7 @@
 class GameHandler{
     private:
         Game game;
+        WINDOW *win;
 
     public:
         GameHandler();

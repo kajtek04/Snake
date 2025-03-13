@@ -6,6 +6,11 @@ struct fruit{
     int x, y;
 };
 
+struct drawObject{
+    char type;
+    int x, y;
+};
+
 class Game{
     private:
         Snake snake;
@@ -22,4 +27,5 @@ class Game{
         void spawnFruit();
         bool checkFruitPlacement(int x, int y);
         object checkCollision();
+        std::vector<drawObject> getDrawObjects();
 };

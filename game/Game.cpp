@@ -9,11 +9,7 @@ Game::~Game(){
 }
 
 void Game::init(){
-    initscr();
-    printw("Hello, World!");
-    refresh();
-    getch();
-    endwin();
+    
 }
 
 void Game::spawnFruit(){
@@ -33,4 +29,15 @@ bool Game::checkFruitPlacement(int x, int y){
         }
     }
     return true;
+}
+
+std::vector<drawObject> Game::getDrawObjects(){
+    std::vector<drawObject> objects;
+    for(auto segment : snake.getBody()){
+        objects.push_back({'o', segment.x, segment.y});
+    }
+    objects.push_back({'f', Fruit.x, Fruit.y});
+    objects[0].type = 'H';
+    std::cout<<"|||"<<objects[0].type<<"|||\n";
+    return objects;
 }
