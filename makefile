@@ -1,5 +1,6 @@
 SOURCE = main.cpp game/*.cpp
 FLAGS = -Wall -pedantic
+LIBS = -lncurses
 OUT = snake
 VALGRIND_FLAGS = --leak-check=full --show-leak-kinds=all --log-file=valgrind.rpt -s
 
@@ -7,7 +8,7 @@ all: compile out
 
 compile:
 	rm -rf $(OUT)
-	g++ $(FLAGS) $(SOURCE) -o $(TARGET)
+	g++ $(FLAGS) $(SOURCE) -o $(OUT) $(LIBS)
 
 out:
 	./$(OUT)
