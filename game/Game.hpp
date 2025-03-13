@@ -1,3 +1,4 @@
+#pragma once
 #include "../utility/defines.hpp"
 #include "Snake.hpp"
 
@@ -15,9 +16,10 @@ class Game{
         Game();
         ~Game();
 
-        void draw();
+        void init();
         void input();
         void logic();
         void spawnFruit();
+        bool checkFruitPlacement(int x, int y);
         object checkCollision();
 };

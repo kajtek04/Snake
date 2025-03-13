@@ -25,13 +25,11 @@ void Snake::move(){
     body[0].dir = headDir;
 
     for(auto& segment : body){
-        switch(segment.dir){
-            int xchange, ychange;
-            xchange = (segment.dir == LEFT) ? -1 : (segment.dir == RIGHT) ? 1 : 0;
-            ychange = (segment.dir == UP) ? -1 : (segment.dir == DOWN) ? 1 : 0;
-            segment.x += xchange;
-            segment.y += ychange;
-        }
+        int xchange, ychange;
+        xchange = (segment.dir == LEFT) ? -1 : (segment.dir == RIGHT) ? 1 : 0;
+        ychange = (segment.dir == UP) ? -1 : (segment.dir == DOWN) ? 1 : 0;
+        segment.x += xchange;
+        segment.y += ychange;
     }
 }
 
@@ -50,8 +48,6 @@ void Snake::changeDirection(direction dir){
     headDir = dir;
 }
 
-void Snake::draw(){
-    for(auto& segment : body){
-        mvprintw(segment.y, segment.x, "O");
-    }
+std::vector<snakeSegment> Snake::getBody(){
+    return body;
 }

@@ -1,10 +1,8 @@
 #include "utility/defines.hpp"
+#include "game/GameHandler.hpp"
 
 int main(){
-    initscr();
-    printw("Hello, World!");
-    refresh();
-    getch();
-    endwin();
+    GameHandler* gameHandler = new GameHandler();
+    gameHandler->run();
     return 0;
 }

@@ -1,3 +1,4 @@
+#pragma once
 #include "../utility/defines.hpp"
 
 struct snakeSegment{
@@ -17,5 +18,5 @@ class Snake{
         void grow();
         void changeDirection(direction dir);
 
-        vector<snakeSegment> getBody();
+        std::vector<snakeSegment> getBody();
 };
